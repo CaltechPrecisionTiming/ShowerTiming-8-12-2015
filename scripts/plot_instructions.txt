@@ -1,0 +1,68 @@
+How to make each plot
+
+
+Corrected time-charge relation
+dtint30_c22.pdf
+makeResolution.cc Macro
+IntDt(2, 2, "t1065_run_30.root", true, "dtint30_c22")
+
+Uncorrected time-charge relation
+dtint30_c22.pdf
+makeResolution.cc Macro
+IntDt(2, 2, "t1065_run_30.root", false, "dtint30_c22")
+
+Example Highest energy pixel algorithm time resolution
+exdtHI.pdf
+makeResolution.cc Macro
+TimeResolution("t1065_run_30.root", false, "exdtHI")
+
+Example weighted energy algorithm time resolution
+exdtWI.pdf
+makeResolution.cc Macro
+TimeResolution("t1065_run_30.root", false, "exdtWI")
+
+Example Mean charge deposit
+exint.pdf
+makeResolution.cc Macro
+ExInt("exint")
+
+Y-axis projection
+projection.pdf
+makeResolution.cc Macro
+MakeProjection("projection")
+! Here you must change the hardcoded root file directories accordingly. Need analyzed runs 30, 32, 34
+
+Example photonis signal pulse
+pulsepix.pdf
+makeResolution.cc Macro
+MakePulses(1, 2, 2, "t1065_run_30.root", "pulsepix")
+
+Example photek signal pulse
+pulseref.pdf
+makeResolution.cc Macro
+MakePulses(1, 0, 2, "t1065_run_30.root", "pulseref")
+
+Shower maximum distribution
+run3*dist.pdf
+makeResolution.cc Macro
+MaximumDist("t1065_run_3*.root", "run3*dist")
+
+Spatial resolution
+sres.pdf / sres_cutoff.pdf
+centers.py script
+python centers.py
+! Comment out runs as you found fit in clistI.
+! for 0.3 mm you have to comment out 28,29, 35-42
+! Pick to your liking
+
+Time resolution per run
+timeres.pdf
+A little more involved
+in t3-higgs:
+./makePlot /wntmp/fpresutti/misc/timeres.pdf /wntmp/fpresutti/graphs/t1065_run_*.root
+then scp over to local machine from /wntmp/fpresutti/misc/, or just download all data and do locally
+
+Calibrated time resolution
+timerescalib.pdf
+./makePlot2 /wntmp/fpresutti/misc/timerescalib.pdf /wntmp/fpresutti/calibrations/self/*.root /wntmp/fpresutti/calibrations/ref/*.root
+and copy to local machine from /wntmp/fpresutti/misc/
