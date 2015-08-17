@@ -21,8 +21,13 @@ TARGET1 = makePlot2
 SRC1 = makePlot2.cc
 OBJ1 = $(SRC1:.cc=.o)
 
+# Resolution-Number Profile analysis 
+TARGET3 = weighting
+SRC3 = weighting.cc
+OBJ3 = $(SRC3:.cc=.o)
 
-all : $(TARGET1) $(TARGET2)
+all : $(TARGET1) $(TARGET2) $(TARGET2)
+
 
 $(TARGET1) : $(OBJ1)
 	$(LD) $(CPPFLAGS) -o $(TARGET1) $(OBJ1) $(LDFLAGS)
@@ -36,6 +41,11 @@ $(TARGET2) : $(OBJ2)
 	@echo $<
 	@echo $^
 
+$(TARGET3) : $(OBJ3)
+	$(LD) $(CPPFLAGS) -o $(TARGET3) $(OBJ3) $(LDFLAG3)
+	@echo $@
+	@echo $<
+	@echo $^
 
 %.o : %.cc
 	$(CXX) $(CPPFLAGS) -o $@ -c $<
@@ -43,4 +53,4 @@ $(TARGET2) : $(OBJ2)
 	@echo $<
 
 clean :
-	rm -f *.o src/*.o $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(TARGET6) $(TARGET7) $(TARGET8) $(TARGET9) $(TARGET10) *~
+	rm -f *.o src/*.o $(TARGET1) $(TARGET2) $(TARGET3) *~
