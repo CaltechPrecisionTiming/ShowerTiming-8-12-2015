@@ -226,18 +226,14 @@ $i$, and $\vec{p}_{i}$ is the vector describing the $x$ and $y$ coordinates of t
 pixel $i$. The origin of the coordinate system is chosen to be at the lower left 
 corner of the $3\times3$ array of pixels.
 
-In Figure~\ref{fig:EMShowerPositions} we show the distributions of the
+Multiple runs were taken scanning different beam positions relative to the Photonis MCP by moving
+the motorized stage. In Figure~\ref{fig:EMShowerPositions} we show the distributions of the
 reconstructed shower positions for three example runs in which the beam was
-located near the top, center, and bottom of the center pixel. Multiple runs were
-taken scanning different beam positions relative to the Photonis MCP by moving
-the motorized stage. For each run, we fit the distributions of the reconstructed
-$x$ and $y$ coordinates with a gaussian function, and consider the mean
-parameters of these two gaussian functions as a measurement of the beam center
-position. In Figure~\ref{fig:EMShowerYPositionComparison} we show a comparison
-of the reconstructed $y$ coordinate distribution for the three corresponding
-runs shown in Figure~\ref{fig:EMShowerPositions}. The beam displacement is
-measured according to the procedure described above and is compared to the known
-displacement as recorded by the motorized stage for these three example runs. 
+located near the top, center, and bottom of the center pixel. The distributions
+of the reconstructed $y$ coordinate for the three corresponding runs are shown 
+together in Figure~\ref{fig:EMShowerPositions}. The measured 
+beam-spot is observed to move consistent with the known movement of the 
+motorized stage. 
 
 \begin{figure*}[htbp]
 	\centering
@@ -261,29 +257,27 @@ compared to the known displacements as recorded by the motorized stage. }
 	\label{fig:EMShowerYPositionComparison}
 \end{figure*}
 
-By comparing the measured beam displacement to the known displacement for an
-ensemble of runs taken at different beam displacement, we can obtain an estimate
-of the resolution of the shower position measurement. For each pair of runs i and j with 
-a known beam displacement $\Delta y^{ij}_{\mathrm{known}}$, we can compute the 
-error in the measured beam displacement as:
+For each run, we determine the center of the beam-spot by fitting the
+measured $x$ and $y$ coordinates with a gaussian function. The data from all runs are combined by 
+considering the measured $x$ and $y$ coordinates relative to the center of the 
+beam-spot. We model the distribution of measured coordinates as a convolution of 
+a flat distribution with width equal to the measured dimensions of the 
+scintillator trigger and a gaussian resolution function. A maximum likelihood fit is performed 
+on the data using this model, and the position resolution of the detector is measured as the width 
+of the gaussian resolution function. We measure the resolution as 
+$0.X\pm0.2$~mm, with an additional systematic uncertainty of $0.15$mm due to the 
+uncertainty in the exact beam-spot shape. 
 
-\begin{equation}
-\delta y^{ij} = (y^{\mathrm{Run\ i}}_\mathrm{measured}-y^{\mathrm{Run\ j}}_\mathrm{measured}) - \Delta 
-y^{ij}_\mathrm{known}.
-\end{equation}
-The spatial position resolution is the standard deviation of the distribution of  
-errors $\delta y^{ij}$ for all pairs of beam positions. The distribution of $\delta y^{ij}$
-for the measured $y$ coordinate is shown in Figure~\ref{fig:sres}, and we 
-observe that the spatial resolution in the $y$ coordinate is about $0.3$~mm. 
-
-\begin{figure}[htbp]
+\begin{figure*}[htbp]
 	\centering
-	\includegraphics[width=8cm]{Images/sres/sres_cutoff.pdf}
-	\caption{\small The spatial resolution in the Y direction. The resolution is
-about $0.3$~mm, much smaller than the $6$~mm pixel
-size of the MCP.}
-	\label{fig:sres}
-\end{figure}
+	\includegraphics[width=0.49\textwidth]{Images/centers/superimposed.pdf}
+	\includegraphics[width=0.49\textwidth]{Images/centers/superimposed.pdf}
+	\caption{ The distributions of the measured $x$ (left) and $y$ (right) coordinates are shown 
+	along with the fit to the resolution model. The position resolution of the EM shower
+	as measured by the MCP detector is determined from the fit to the resolution 
+	model.  }
+	\label{fig:ResolutionMeasurement}
+\end{figure*}
 
 
 
