@@ -7,6 +7,7 @@
 #include <TF1.h>
 #include <TCanvas.h>
 #include <TDirectory.h>
+#include <TLatex.h>
 #include <TStyle.h>
 
 //Axis
@@ -19,7 +20,7 @@ const float axisTitleOffsetRatioX = 0.84;
 
 const float axisTitleSizeRatioY   = 0.15;
 const float axisLabelSizeRatioY   = 0.108;
-const float axisTitleOffsetRatioY = 0.32;
+const float axisTitleOffsetRatioY = 0.52;
 
 //Margins
 const float leftMargin   = 0.12;
@@ -52,7 +53,7 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   //f->FixParameter(2, a);
   f->SetParameter(3, sigma);
   
-  f->SetLineColor(kBlue);
+  //f->SetLineColor(kBlue);
   //---------------------------------------------------
   //S e l e c t i n g   c o o r d i n a t e  t o  f i t
   //---------------------------------------------------
@@ -87,10 +88,6 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   f->SetParLimits(2, 0.9*a, 1.1*a);
   T->Draw(var, "", "goff");
   TH1F* histo = (TH1F*)gDirectory->Get("histo");
-  //histo->Draw();
-  //f->Draw("same");
-
-  
   histo->Fit(f,"MLR");
 
   TCanvas* c = new TCanvas( "c", "c", 2119, 33, 800, 700 );
@@ -113,13 +110,27 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   histo->GetXaxis()->SetTitleSize( axisTitleSize );
   histo->GetXaxis()->SetTitleOffset( axisTitleOffset );
   histo->GetYaxis()->SetTitleSize( axisTitleSize );
-  histo->GetYaxis()->SetTitleOffset( axisTitleOffset );
+  histo->GetYaxis()->SetTitleOffset( axisTitleOffset + 0.15);
   histo->SetTitle("");
   histo->SetXTitle(axisTitle);
   histo->SetYTitle( "entries / 0.2 mm" );
   
   histo->SetStats(0);
   histo->Draw();
+  std::cout << "sigma: " << f->GetParameter(3) << std::endl;
+
+  //------
+  //Latex
+  //------
+  TString sigmaVal = TString( Form( "#sigma = %.2f #pm %.2f [mm]", f->GetParameter(3), f->GetParError(3) ) );
+  TLatex latex;
+  latex.SetNDC();
+  latex.SetTextAngle(0);
+  latex.SetTextColor(kBlack);    
+  latex.SetTextFont(42);
+  latex.SetTextAlign(31); 
+  latex.SetTextSize(0.04);    
+  latex.DrawLatex(0.93, 0.88, sigmaVal );
   c->SaveAs( outName+".pdf" );
   c->SaveAs( outName+".C" );
 };
