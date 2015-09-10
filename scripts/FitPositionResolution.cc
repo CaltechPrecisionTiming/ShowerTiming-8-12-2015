@@ -59,18 +59,20 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   TString var;
   double xlow  = -5.;
   double xhigh = 5.;
-  TString axisTitle;
+  TString axisTitle, outName;
   if ( coord == "X" )
     {
       var = Form("coords[0]>>histo(%d,%f,%f)", nbins, xlow, xhigh);
       a = 1.7;
       axisTitle = "X [mm]";
+      outName = "X_Resolution";
     }
   else if ( coord == "Y" )
     {
       var = Form("coords[1]>>histo(%d,%f,%f)", nbins, xlow, xhigh);
       a = 2.0;
       axisTitle = "Y [mm]";
+      outName = "Y_Resolution";
     }
   else
     {
@@ -118,5 +120,6 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   
   histo->SetStats(0);
   histo->Draw();
-  
-}
+  c->SaveAs( outName+".pdf" );
+  c->SaveAs( outName+".C" );
+};
