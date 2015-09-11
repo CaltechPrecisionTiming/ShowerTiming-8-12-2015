@@ -41,7 +41,8 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   //-------------------------------------
   //d e f i n e   f i t   f u n c t i o n
   //-------------------------------------
-  TF1* f = new TF1( "f", "[0]*(TMath::Erf((2*(x-[1])+[2])/([3]*TMath::Sqrt(8))) + TMath::Erf((2*([1]-x)+[2])/([3]*TMath::Sqrt(8))))", -2, 2 );
+  TF1* f = new TF1( "f", "[0]*(TMath::Erf((2*(x-[1])+[2])/([3]*TMath::Sqrt(8))) + TMath::Erf((2*([1]-x)+[2])/([3]*TMath::Sqrt(8))))", -1.8, 1.8 );
+  //TF1* f = new TF1( "f", "[0]*(TMath::Erf((2*(x-[1])+[2])/([3]*TMath::Sqrt(8))) + TMath::Erf((2*([1]-x)+[2])/([3]*TMath::Sqrt(8)))) + [4]*exp(-0.5*((x-[1])/[5])**2)", -3., 3. );
   double norm = 2000;
   double a = 1.7;//[1]
   double mu = 0.0;//[2]
@@ -52,6 +53,8 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   f->SetParameter(2, a);
   //f->FixParameter(2, a);
   f->SetParameter(3, sigma);
+  //f->SetParameter(4, 0.1*norm);
+  //f->SetParameter(5, 4*sigma);
   
   //f->SetLineColor(kBlue);
   //---------------------------------------------------
@@ -80,15 +83,16 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
       std::cerr << "[ERROR]: coordinate not recognized, provide X or Y" << std::endl;
       return;
     }
-
+  
   //--------------------------------------
   //F i x i n g  t r i g g e r   w i d t h
   //--------------------------------------
-  //f->FixParameter(2, a);
-  f->SetParLimits(2, 0.9*a, 1.1*a);
+  f->FixParameter(2, a);
+  //f->SetParLimits(2, 0.0, 300*a);
+  //f->SetParLimits(5, 1.0, 400000);
   T->Draw(var, "", "goff");
   TH1F* histo = (TH1F*)gDirectory->Get("histo");
-  histo->Fit(f,"MLR");
+  histo->Fit(f,"RV");
 
   TCanvas* c = new TCanvas( "c", "c", 2119, 33, 800, 700 );
   c->SetHighLightColor(2);
@@ -113,7 +117,7 @@ void FitSpatialResolution( TString inputFile = "" , TString coord = "X", int nbi
   histo->GetYaxis()->SetTitleOffset( axisTitleOffset + 0.15);
   histo->SetTitle("");
   histo->SetXTitle(axisTitle);
-  histo->SetYTitle( "entries / 0.2 mm" );
+  histo->SetYTitle( "entries / 0.25 mm" );
   
   histo->SetStats(0);
   histo->Draw();
