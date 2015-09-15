@@ -1,0 +1,3 @@
+pdflatex PixelMCPPaper2015;
+bibtex PixelMCPPaper2015;
+pdflatex PixelMCPPaper2015;

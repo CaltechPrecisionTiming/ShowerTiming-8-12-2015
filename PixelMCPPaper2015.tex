@@ -46,7 +46,7 @@ Shower Maximum Detector}
 \maketitle
 \abstract{One possibility to make a fast and radiation resistant shower maximum
 detector is to use a secondary emitter as an active element. We further the
-study of microchannel plate photomultipliers (MCPs) as an active element of a
+study of microchannel plate photomultipliers (MCPs) as the active element of a
 shower-maximum detector. We present test beam results obtained using Photonis
 XP85011 and Photek 240 MCPs to detect secondary particles of an electromagnetic
 shower. We focus on the use of the multiple pixels on the Photonis MCP in order
@@ -69,14 +69,14 @@ capability~\cite{Anderson:2015gha,MCPFastCaloNIMA,Ronzhin:2015pba,MCPShowerMaxPa
 Past studies have indicated that using micro-channel plates (MCP) as the active
 element of a shower-maximum detector or a calorimeter is a promising option for
 achieving time measurement precision at the level of a few tens of
-picoseconds~\cite{MCPFastCaloNIMA,Ronzhin:2015pba,MCPShowerMaxPaper}. Moreover
-such devices would be intrinsically radiation hard and would survive the harsh
-radiation environments at future hadron colliders. A further advantage of MCP's
+picoseconds~\cite{MCPFastCaloNIMA,Ronzhin:2015pba,MCPShowerMaxPaper}. Moreover,
+such devices are intrinsically radiation hard and thus would tolerate the harsh
+radiation environment at future hadron colliders. A further advantage of MCP's
 is their capability for pixelated readout, allowing for the possibility of a
 highly granular calorimeter with sub-millimeter spatial resolution. Such
 high-granularity calorimeters have been studied in the context of detector
 concepts for the ILC~\cite{CALICE} and the Phase-2 upgrade of the CMS 
-experiment~\cite{CMSHGCal}, and indicate that such calorimeters have promising 
+experiment~\cite{CMSHGCal}, indicating that such calorimeters have promising 
 potential for substantial improvement in physics reach at the TeV scale.
 
 In this paper, we report on the first studies of a high-granularity
@@ -85,8 +85,8 @@ element to detect direct secondary emission particles. The MCP is used to
 sample the electromagnetic shower induced by a beam of electrons impacting a
 tungsten absorber layer that has a thickness of about 4 radiation lengths
 ($X_{0}$). The active area of the MCP-PMT is pixelated, with square pixels of
-size $6$~mm, and individual pixels are read out through distinct electronic
-channels. The energy of the electromagnetic showers are reconstructed using the
+size $6$~mm, and individual pixels are read out through separate electronic
+channels. The energy of the electromagnetic showers is reconstructed using the
 total collected charge and the positions are reconstructed using a simple
 energy-weighting algorithm. Through the use of a high-precision motorized stage,
 a position scan is performed during beam-tests and the position resolution of
@@ -94,13 +94,7 @@ the shower-maximum detector is obtained. Finally, we investigate various timing
 properties of such a pixellated shower-maximum detector.
 
 The paper is organized as follows. In Section~\ref{}....
-
-
-
-
-
 \section{Experimental Setup}
-
 The experiment was performed at the MTEST location of the Fermilab Test Beam
 Facility using an $8$~GeV beam primarily comprised of electrons~\cite{FTBF}. A
 differential Cherenkov counter, located further upstream of the MTEST location,
@@ -111,7 +105,7 @@ dark box is shown in Figure~\ref{fig:setup}. A scintillator of size
 $1.7$~mm$\times$~$2.0$~mm optically coupled to two photomultiplier tubes, one on
 each side, was used to trigger the data acquisition and to constrain the
 trajectory of the electrons from the beam. Downstream of the trigger, a tungsten
-absorber with a thickness of about $1$~cm, equivalent to about 3 radiation
+absorber with a thickness of about $1$~cm, equivalent to about 4 radiation
 lengths, was placed. The Photonis XP85011 MCP with pixelated readout was set on
 a high precision motorized stage and placed behind the tungsten absorber. The
 precision of the motorized stage is about $0.1$~mm. A Photek 240 MCP-PMT, whose
@@ -120,22 +114,17 @@ $10$~ps~\cite{MCPShowerMaxPaper} was used to record the reference time-stamp. To
 avoid unintended early showers due to interactions with the material of the
 casing and MCP device, the Photek 240 MCP-PMT was placed behind the Photonis
 XP85011 MCP.
-
-
-
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Images/setup/setup.png}
-	\caption{ The experimental setup inside of the dark box is shown. The beam
-direction is from the bottom of the photograph to the top. The detector elements
-shown in the order from upstream to downstream of the beam are: the tungsten
-absorber, the Photonis XP85011 MCP located on the on the motorized stage, and
-the Photek 240 MCP used as a time reference detector. The DRS4 waveform
-digitizers are also shown on the lower right side.}
-	\label{fig:setup}
+  \centering
+  \includegraphics[width=0.8\textwidth]{Images/setup/setup.png}
+  \caption{ The experimental setup inside of the dark box is shown. The beam
+    direction is from the bottom of the photograph to the top. The detector elements
+    shown in the order from upstream to downstream of the beam are: the tungsten
+    absorber, the Photonis XP85011 MCP located on the on the motorized stage, and
+    the Photek 240 MCP used as a time reference detector. The DRS4 waveform
+    digitizers are also shown on the lower right side.}
+  \label{fig:setup}
 \end{figure}
-
-
 An external view of the Photonis XP85011 MCP is shown on the left of
 Figure~\ref{fig:photonis}, and a schematic diagram is shown on the right. There
 are a total of 64 pixels arranged in an $8\times8$ square that can be read out
@@ -143,26 +132,21 @@ individually. For our experiment, the nine pixels shown within the red square
 are used. During the course of the experiment we found that the pixel labelled
 44 in Figure~\ref{fig:photonis} did not function properly and was therefore not 
 used in the analysis of the data.
-
 \begin{figure}[htbp] \centering
 \includegraphics[width=0.49\textwidth]{Images/photonis/photonis.jpg}
 \includegraphics[width=0.49\textwidth]{Images/photonis/photonis2.png}
 \caption{The external view of the Photonis XP85011 MCP is shown on the left, and
 the schematic diagram is shown on the right. The red square indicates the pixels
-that were used for the experiment and data analysis.} 	\label{fig:photonis} \end{figure}
-
-
+used for the experiment and data analysis.}
+\label{fig:photonis}
+\end{figure}
 Four DRS4 high speed waveform digitizers were used to acquire the signals from
 the Photek 240 MCP, the cherenkov counter, and the eight operational channels
 from the Photonis XP85011 MCP. The reference signal from the Photek 240 MCP was 
 split into four and connected to each of the four DRS4 units in order to achieve 
 clock synchronization between the four different units. 
-
 % should draw a diagram of how the channels were distributed among the 4 DRS 
-units
-
-
-
+%units
 \section{Event Selection and Pulse Reconstruction}
 \label{sec:reconstruction}
 Reconstruction of the signal pulses and timestamps is performed using the
@@ -170,7 +154,7 @@ identical methods described in our past
 studies~\cite{Anderson:2015gha,MCPFastCaloNIMA,Ronzhin:2015pba,MCPShowerMaxPaper}.
 In Figure~\ref{fig:expulse}, we show example pulses from one pixel channel of
 the Photonis XP85011 MCP and the Photek 240 MCP-PMT digitized by the DRS4.
-Gaussian fits to the peak region of the pulse is used to reconstruct the
+Gaussian fits to the peak region of the pulse are used to reconstruct the
 timestamps for each signal. The integrated charge for each pulse is used as a
 proxy for the measured energy deposit in each channel, and is computed using
 four time samples before and after the peak of the pulse. Each time sample is
@@ -180,19 +164,15 @@ larger than $20$~mV are used for time measurements, to reduce the impact of the
 electronics noise in the DRS4. Other event selection and pulse cleaning
 procedures are used to eliminate abnormal pulses in the readout, as described
 in~\cite{MCPFastCaloNIMA}. 
-
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.49\textwidth]{Images/expulse/pulsepix_30_2_12.pdf}
 	\includegraphics[width=0.49\textwidth]{Images/expulse/pulseref_30_2_10.pdf}
 	\caption{\small Example of a digitized signal from a single Photonis pixel
-(top) and Photek (bottom) MCP following a high-energy electron shower, via DRS4.}
+(left) and Photek (right) MCP following a high-energy electron shower, via DRS4.}
 	\label{fig:expulse}
 \end{figure}
-
-
 \section{ Electromagnetic Shower Position Reconstruction and Resolution}
-
 The transverse shape of electromagnetic showers is very well known and has a
 characteristic width given by the Moliere radius. For tungsten, the Moliere
 radius is about $9$~mm and therefore we expect the shower to be contained within
@@ -200,23 +180,20 @@ two of the pixels in the Photonis XP85011 MCP. In Figure~\ref{fig:exavint}, we
 show the mean charge measured in each of the pixels for one example run where
 the Photonis MCP was held in a fixed location approximately centered on the
 beam. The electron beam has a width of about $1$~cm. 
-
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/exavint/exintrun30.pdf}
-	\caption{\small The mean charge measured for each pixel for one example run is
-shown. During this run, the Photonis MCP was held in the same location. Based on
-the distribution of the mean charge among the pixels, we can infer that the beam
-center is located in the upper half of the center pixel. Pixel 44 is not shown
-as it was found to be not operational. }
-	\label{fig:exavint}
+  \centering
+  \includegraphics[width=8cm]{Images/exavint/exintrun30.pdf}
+  \caption{\small The mean charge measured for each pixel for one example run is
+    shown. During this run, the Photonis MCP was held in the same location. Based on
+    the distribution of the mean charge among the pixels, we can infer that the beam
+    center is located in the upper half of the center pixel. Pixel 44 is not shown
+    as it was found to be not operational. }
+  \label{fig:exavint}
 \end{figure}
-
 Each electron impacting the shower-maximum detector will induce an
 electromagnetic shower, and we define such an occurrence as an event. For each 
 event, we reconstruct the center position, $\vec{p}$ of the electromagnetic shower based on the 
 the pixel positions weighted by the corresponding integrated charge as follows:
-
 \begin{equation}
 \vec{\mathbf{{p}}} = \frac{\sum_{i\in\mathrm{pixels}} Q_{i} \vec{p}_i}
 {\sum_{i\in\mathrm{pixels}} Q_{i}}
@@ -231,63 +208,54 @@ the motorized stage. In Figure~\ref{fig:EMShowerPositions} we show the distribut
 reconstructed shower positions for three example runs in which the beam was
 located near the top, center, and bottom of the center pixel. The distributions
 of the reconstructed $y$ coordinate for the three corresponding runs are shown 
-together in Figure~\ref{fig:EMShowerPositions}. The measured 
+together in Figure~\ref{fig:EMShowerYPositionComparison}. The measured 
 beam-spot is observed to move consistent with the known movement of the 
 motorized stage. 
-
 \begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=0.49\textwidth]{Images/centers/run30dist.pdf}
-	\includegraphics[width=0.49\textwidth]{Images/centers/run32dist.pdf}
-	\includegraphics[width=0.49\textwidth]{Images/centers/run34dist.pdf}
-
-	\caption{The distribution of reconstructed shower positions is shown
-	for three runs with the beam centered near the top, center, and bottom of the
-	central pixel. }
-	\label{fig:EMShowerPositions}
+  \centering
+  \includegraphics[width=0.49\textwidth]{Images/centers/run30dist.pdf}
+  \includegraphics[width=0.49\textwidth]{Images/centers/run32dist.pdf}
+  \includegraphics[width=0.49\textwidth]{Images/centers/run34dist.pdf}
+  
+  \caption{The distribution of reconstructed shower positions is shown
+    for three runs with the beam centered near the top, center, and bottom of the
+    central pixel. }
+  \label{fig:EMShowerPositions}
 \end{figure*}
-
 \begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=0.75\textwidth]{Images/centers/superimposed.pdf}
-	\caption{ The distributions of reconstructed shower position in the $y$ axis is
-shown for the three runs corresponding to the distributions shown in
-Figure~\ref{fig:EMShowerPositions}. The measured beam displacements are
-compared to the known displacements as recorded by the motorized stage. }
-	\label{fig:EMShowerYPositionComparison}
+  \centering
+  \includegraphics[width=0.75\textwidth]{Images/centers/superimposed.pdf}
+  \caption{ The distributions of reconstructed shower position in the $y$ axis is
+    shown for the three runs corresponding to the distributions shown in
+    Figure~\ref{fig:EMShowerPositions}. The measured beam displacements are
+    compared to the known displacements as recorded by the motorized stage. }
+  \label{fig:EMShowerYPositionComparison}
 \end{figure*}
-
 For each run, we determine the center of the beam-spot by fitting the
 measured $x$ and $y$ coordinates with a gaussian function. The data from all runs are combined by 
 considering the measured $x$ and $y$ coordinates relative to the center of the 
-beam-spot. We model the distribution of measured coordinates as a convolution of 
+beam-spot (see Fig~\ref{fig:ResolutionMeasurement}). We model the distribution of measured coordinates as a convolution of 
 a flat distribution with width equal to the measured dimensions of the 
 scintillator trigger and a gaussian resolution function. A maximum likelihood fit is performed 
 on the data using this model, and the position resolution of the detector is measured as the width 
 of the gaussian resolution function. We measure the resolution as 
 $0.X\pm0.2$~mm, with an additional systematic uncertainty of $0.15$mm due to the 
 uncertainty in the exact beam-spot shape. 
-
 \begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=0.49\textwidth]{Images/centers/superimposed.pdf}
-	\includegraphics[width=0.49\textwidth]{Images/centers/superimposed.pdf}
-	\caption{ The distributions of the measured $x$ (left) and $y$ (right) coordinates are shown 
-	along with the fit to the resolution model. The position resolution of the EM shower
-	as measured by the MCP detector is determined from the fit to the resolution 
-	model.  }
-	\label{fig:ResolutionMeasurement}
+  \centering
+  \includegraphics[width=0.49\textwidth]{Images/XYResolution/X_Resolution_fixedTrigger.pdf}
+  \includegraphics[width=0.49\textwidth]{Images/XYResolution/Y_Resolution_fixedTrigger.pdf}
+  \caption{ The distributions of the measured $x$ (left) and $y$ (right) coordinates are shown 
+    along with the fit to the resolution model. The position resolution of the EM shower
+    as measured by the MCP detector is determined from the fit to the resolution 
+    model.  }
+  \label{fig:ResolutionMeasurement}
 \end{figure*}
-
-
-
 \section{ Electromagnetic Shower Time Resolution }
-
 The timestamps for individual pixels of the Photonis MCP is reconstructed as
 described in Section~\ref{sec:reconstruction}. We reconstruct the timestamp of
 the entire electromagnetic shower using the same energy weighting procedure that
 was used above for the shower position reconstruction:
-
 \begin{equation} t =\frac{\sum_{i\in\mathrm{pixels}} Q_{i} t_{i}}
 {\sum_{i\in\mathrm{pixels} Q_{i}}}, \label{eqn:EnergyWeightedTimestamp}
 \end{equation} where $i$ labels the individual pixels, $Q_{i}$ is the charge
@@ -295,95 +263,78 @@ collected in pixel $i$, and $t_{i}$ is the reconstructed time-stamp for pixel
 $i$. Alternatively, we also study the time resolution using the single pixel
 with the highest energy deposit measurement. In Figure~\ref{fig:exdt} we show
 the time distributions for these two methods of shower time reconstruction.
-
 \begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/exdt/exdtWI.pdf}
-	\includegraphics[width=8cm]{Images/exdt/exdtHI.pdf}
-	\caption{\small The time distributions obtained using the highest energy pixel
-(left) and the energy weighted algorithm (right) are shown for one example run.
-The distributions are fitted with Gaussian models, and the width parameter of
-the Gaussian is displayed on the plot.}
-	\label{fig:exdt}
+  \centering
+  \includegraphics[width=8cm]{Images/exdt/exdtHI.pdf}
+  \includegraphics[width=8cm]{Images/exdt/exdtWI.pdf}
+  \caption{\small The time distributions obtained using the highest energy pixel
+    (left) and the energy weighted algorithm (right) are shown for one example run.
+    The distributions are fitted with Gaussian models, and the width parameter of
+    the Gaussian is displayed on the plot.}
+  \label{fig:exdt}
 \end{figure*}
-
-
 In Figure~\ref{fig:wtres}, we compare the time resolution for electromagnetic
 showers measured using the two methods described above. The time resolution for
 the pixel with the largest energy deposit is around $70$~ps and $85$~ps,
 depending on the run. Using the energy weighted algorithm improves the time
 resolution consistently to about $50$~ps. 
-
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/wtres/tresperrun.pdf}
-	\caption{\small Time resolution found for each run. The time-stamp weighting
-method consistently results in under $60$~ps. Notice how the
-highest-signal-pixel method for picking the time-stamp value is significantly
-worse.}
-	\label{fig:wtres}
+  \centering
+  \includegraphics[width=8cm]{Images/wtres/tresperrun.pdf}
+  \caption{\small Time resolution found for each run. The time-stamp weighting
+    method consistently results in under $60$~ps. Notice how the
+    highest-signal-pixel method for picking the time-stamp value is significantly
+    worse.}
+  \label{fig:wtres}
 \end{figure}
-
-
 We note that the time measurement made using the Photonis MCP typically exhibit
 a dependence on the pulse amplitude or integrated charge. This dependence is
 shown on the left of Figure~\ref{fig:dt-int}, and is observed to be 
 approximately the same for all pixels. We perform a correction to the
 time measurement based on the measured integrated charge, and we verify that the
 correction does flatten the dependence of the time measurement on the integrated
-charge on the right of Figure~\ref{fig:dt-int}. After performing this time 
+charge as shown on the right panel of Figure~\ref{fig:dt-int}. After performing this time 
 measurement correction, the time resolution measurements improve to about 
 $35$~ps and is shown in Figure~\ref{fig:calib}.
 
 \begin{figure*}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/dt-int/dtint30_o22.pdf}
-	\includegraphics[width=8cm]{Images/dt-int/dtint30_c22.pdf}
-	\caption{The correlation between the time measurement and the measured
-integrated charge is shown on the left for one example pixel. The same
-correlation after performing the time measurement correction is shown on the 
-right.
-}
-	\label{fig:dt-int}
+  \centering
+  \includegraphics[width=8cm]{Images/dt-int/dtint30_o22.pdf}
+  \includegraphics[width=8cm]{Images/dt-int/dtint30_c22.pdf}
+  \caption{The correlation between the time measurement and the measured
+    integrated charge is shown on the left for one example pixel. The same
+    correlation after performing the time measurement correction is shown on the 
+    right.
+  }
+  \label{fig:dt-int}
 \end{figure*}
-
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/calibtres/timerescalib.pdf}
-	\caption{ The time resolution of the electromagnetic shower for various runs is
-shown after performing the time measurement correction based on the measured
-integrated charge. }
-	\label{fig:calib}
+  \centering
+  \includegraphics[width=8cm]{Images/calibtres/timerescalib.pdf}
+  \caption{ The time resolution of the electromagnetic shower for various runs is
+    shown after performing the time measurement correction based on the measured
+    integrated charge. }
+  \label{fig:calib}
 \end{figure}
-
-
 Finally, we study the dependence of the electromagnetic shower time resolution
 as a function of the number of pixels included in the energy-weighted algorithm.
 Figure~\ref{fig:sqrtN} shows this dependence for one example run. We observe
 that the time resolution improves according to a $1/\sqrt{N}$ scaling up to
-about $3$ or $4$ pixels, and then becomes flat as we include even more pixels. 
+about $3$ or $4$ pixels, and then becomes flat as we include more pixels. 
 The initial $1/\sqrt{N}$ scaling is encouraging as it indicates that further 
-granularity in the transverse may help to improve the time resolution. As the 
+granularity may improve the time resolution. As the 
 majority of the shower is covered by the pixels closest to the center of the 
-shower, it is not very surprising that beyond about $4$ pixels, we do not observe any 
-improvement from the inclusion of additional pixels because they simply do not contain any 
-additional information about the shower.
-
-
+shower, it is not surprising that beyond about $4$ pixels, we do not observe any 
+improvement from the inclusion of additional pixels.
+% because they simply do not contain any additional information about the shower.
 \begin{figure}[htbp]
-	\centering
-	\includegraphics[width=8cm]{Images/sqrtN/t1065_run_38_Dt_IWP.pdf}
-	\caption{ The time resolution is plotted as a function of the number of pixels
-included in the energy-weighted algorithm for one example run. }
-	\label{fig:sqrtN}
+  \centering
+  \includegraphics[width=8cm]{Images/sqrtN/t1065_run_38_Dt_IWP.pdf}
+  \caption{ The time resolution is plotted as a function of the number of pixels
+    included in the energy-weighted algorithm for one example run. }
+  \label{fig:sqrtN}
 \end{figure}
-
-
-
 \title{\large}{\textbf{Discussion and Conclusion}}
-
-
-
 \section{Acknowledgements} We would like to thank Erik Ramberg and Sergey Los
 for their support of our work, and Aria Soha and the FTBF test beam facility for
 the good beam delivery and control. We thank Randy Ruchti for providing us with
@@ -391,39 +342,6 @@ the DSB1 fibers used in the measurements, and Eileen Hahn for the high quality
 work in polishing the fibers. Thanks to Ewa Skup and Geoff Savage for help with
 operation of Cherenkov counters, and to Todd Nobel for organizing and providing
 supporting equipment at FTBF.
-
-
 \bibliography{PixelMCPPaper2015}{}
 \bibliographystyle{ieeetr}
-\end{document}    
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\end{document}
