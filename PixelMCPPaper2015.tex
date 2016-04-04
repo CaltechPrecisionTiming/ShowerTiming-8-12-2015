@@ -56,48 +56,59 @@ simultaneous interactions per bunch crossing (pileup) increase the likelihood of
 confusion in the reconstruction of particles from the hard scatter interaction
 with those produced in different pileup interactions. The ability to
 discriminate jets, photons, and electrons produced in the events of interests
-from pileup becomes significantly degraded. One way to mitigate the pileup
-confusion effects, complementary to precision tracking methods, is to perform a
-time of arrival measurement associated with a particular layer of the
-calorimeter, allowing for a time assignment for charged particles and photons.
-In this paper we continue our investigation of the development of calorimeter
-and shower-max detectors capable to measure the arrival time of
-electromagnetically interacting
-particles~\cite{Anderson:2015gha,MCPFastCaloNIMA,Ronzhin:2015pba,Ronzhin2015288}. 
+from pileup becomes significantly degraded. 
 
-Past studies have indicated that using micro-channel plates (MCP) as the activeelement of a shower-maximum detector or a calorimeter is a promising option forachieving time measurement precision at the level of a few tens ofpicoseconds~\cite{MCPFastCaloNIMA,Ronzhin:2015pba,Ronzhin2015288,Brianza2015216}. Moreover,such devices are intrinsically radiation hard and thus would tolerate the harshradiation environment at future hadron colliders. A further advantage of MCP'sis their capability for highly segmented readout, allowing for the possibility of ahighly granular calorimeter with sub-millimeter spatial resolution. Suchhigh-granularity calorimeters have been studied in the context of detectorconcepts for the ILC~\cite{Grondin:2010fe} and the HL-LHC upgrade of the CMS experiment~\cite{Butler:2020886}, indicating that such calorimeters have promising potential for substantial improvement in physics reach at the TeV scale.
+One way to mitigate the pileup confusion effects, complementary to precision tracking 
+methods, is to perform a time of arrival measurement associated with a particular layer of the
+calorimeter, allowing for a time assignment for charged particles and photons.
+Achieving such a time measurement with resolution better than $20$-$30$~ps
+can effectively reduce the impact of pileup by a factor of $5$. The ultimate 
+goal is to develop an electromagnetic calorimeter with the same capabilities as 
+the ones used in the CMS and ATLAS experiments, but with the enhanced capability 
+to achieve time measurements at precisions of $20$-$30$~ps.
+In this paper we continue our investigation of the development of such a calorimeter
+~\cite{Anderson:2015gha,MCPFastCaloNIMA,Ronzhin:2015pba,Ronzhin2015288}. 
+
+Past studies have indicated that using micro-channel plates (MCP) as the activeelement of a shower-maximum detector or a calorimeter is a promising option forachieving time measurement precision at the level of a few tens ofpicoseconds~\cite{MCPFastCaloNIMA,Ronzhin:2015pba,Ronzhin2015288,Brianza2015216}. 
+Moreover, such devices are intrinsically radiation hard and thus would tolerate the harshradiation environment at future hadron colliders, particularly when operated 
+without the reliance on a photocathode. 
+In reference~\cite{Ronzhin2015288}, we have demonstrated that the intrinsic 
+fluctuations of electromagnetic showers induce jitter on the time measurement
+that is less than $10$~ps, removing one important potential fundamental limitation.
+A further advantage of MCP's is their capability for highly segmented readout, allowing for 
+the possibility of a highly granular calorimeter with sub-millimeter spatial resolution. Suchhigh-granularity calorimeters have been studied in the context of detectorconcepts for the ILC~\cite{Grondin:2010fe} and the HL-LHC upgrade of the CMS experiment~\cite{Butler:2020886}, indicating that such calorimeters have promising potential for substantial improvement in physics reach at the TeV scale. In this 
+paper, we report on studies of the position and time resolution for a calorimeter prototype
+that uses the Photonis XP85011 MCP as the active element, and read out in a highly granular 
+mode.
 
 In this and the three previous papers we used three different MCP-PMTs:
 \begin{itemize}
-\item Photek 240: this is our highest performant device, which provides the best
-      time resolution, and good uniformity across the detector. Main parameters
+\item Photek 240: our most performant device, which provides the best
+      time resolution, and excellent uniformity across the detector. The main parameters
       of the Photek 240 were reported in Ref.~\cite{MCPFastCaloNIMA}. The pore
       size is 10~$\mu$m and the distance from the photocathode to the first
       amplification stage is 5.3~mm. The Photek 240 has a 41~mm$^2$ circular
       sensitive area, and it was operated 4.8~kV high voltage (HV). The gain at
-      this voltage is about 10$^6$. The output signal time shift is limited to
-      3.9~ps across the sensitive area of the Photek 240.
+      this voltage is about 10$^6$. The non-uniformity of the time response of the signal 
+      is limited to below 3.9~ps across the full sensitive area.
 \item Photonis XP85011: the anode of this MCP is composed of 64 pads, arranged
-      as an $8\times8$ matrix. The size of each pad is 6×6 mm2. The pore size of the
-      Photonis MCP-PMT is 25 μm. Timing non-uniformity across the photocathode
-      is 37 ps when using the passive sum of 16 pads~\cite{MCPFastCaloNIMA, Ronzhin2015288}. The
-      HV applied to the tube Photonis XP85011 was 2.4~kV, with a corresponding
-      gain of $10^6$. 
-\item Photonis XP85012: like XP85011 is also composed of 64 pixels, arranged as
-      an $8\times8$ matrix. The charactersitcs of this device are the same as
-      those for Photonis XP85011, and additionally it can be operated in a mode
-      when reverse voltage is applied to photocathode, which enables us to turn
-      the photocathode OFF, in order to measure the direct signals from
-      secondary showers~\cite{Ronzhin:2015pba}.  
-\end{itemize}
-In this paper, we report our studies of a high-granularity shower-maximum
-detector that uses the Photonis XP85011 MCP as the active element to detect
-direct secondary emission particles. The MCP is used to sample the
-electromagnetic shower induced by a beam of electrons impacting a tungsten
-absorber layer that has a thickness of about 4 radiation lengths ($X_{0}$). The
-MCP-PMT is read out with a pixelated anode, with square pixels of size $6$~mm.
-The energy of the electromagnetic showers is reconstructed using the total
-collected charge and the positions are reconstructed using a simple
+      as an $8\times8$ matrix. The size of each pad is $6\times6$~$\mathrm{mm}^{2}$. 
+      The pore size is 25 $\mu$m. The non-uniformity  of the time response across the photocathode
+      is $37$~ps~\cite{MCPFastCaloNIMA, Ronzhin2015288}. The HV applied to the Photonis XP85011 
+      was 2.4~kV, with a corresponding gain of $10^6$. 
+\item Photonis XP85012: mostly identical to XP85011, also composed of 64 pixels arranged as
+      an $8\times8$ matrix. Additionally it can be operated in a mode with a reverse voltage applied 
+      to photocathode, which enables us to effectively turn off any signals from 
+      the photocathode. When operated in this mode, the only signals are 
+      directly from secondary shower particles~\cite{Ronzhin:2015pba}.  
+\end{itemize}
+We report on our studies of the high-granularity shower-maximum detector prototype that uses the 
+Photonis XP85011 MCP as the active element to detect direct secondary emission particles. 
+The MCP is used to sample the electromagnetic shower induced by a beam of electrons impacting a 
+tungsten absorber layer that has a thickness of about 4 radiation lengths ($X_{0}$). The
+MCP-PMT is read out with a pixelated anode, with square pixels of size 
+$6\times6$~$\mathrm{mm}^{2}$. The energy of the electromagnetic showers is reconstructed 
+using the total collected charge and the positions are reconstructed using a simple
 energy-weighting algorithm, described in Section~\ref{sec:position}.
 Through the use of a high-precision motorized stage, a position scan is
 performed during beam-tests and the position resolution of the shower-maximum
@@ -116,7 +127,7 @@ the MTEST location of the Fermilab Test Beam Facility using an $8$~GeV beam
 primarily comprised of electrons. A differential Cherenkov counter, located
 further upstream of the MTEST location, was used to enhance the purity of
 electrons and to suppress pions, by requiring a signal consistent with a passage
-of electrons through the counter. All other detectors were placed inside a dark
+of electrons through the device. All other detectors were placed inside a dark
 box lined with copper foil for electromagnetic shielding. A photograph of the
 experimental setup within the dark box is shown in Figure~\ref{fig:setup}. A
 scintillator of size $1.7$~mm$\times$~$2.0$~mm optically coupled to two
@@ -331,8 +342,7 @@ resolution consistently to about $50$~ps.
 \begin{figure}[htbp] 
 \centering
 \includegraphics[width=8cm]{Images/wtres/tresperrun.pdf} 
-\caption{\small Time resolution found for each run. The time-stamp weighting method consistently results in under $60$~ps. Notice how the highest-signal-pixel method for picking
-the time-stamp value is significantly worse.} 
+\caption{\small Time resolution found for each run. The time-stamp obtained using the energy weighting method yields time resolutions consistently below $60$~ps. The time resolution measured using the single pixel with the largest signal is significantly worse.} 
 \label{fig:wtres} 
 \end{figure} 
 
