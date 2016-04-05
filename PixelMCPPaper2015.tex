@@ -394,11 +394,12 @@ as a function of the number of pixels included in the energy-weighted algorithm.
 Figure~\ref{fig:sqrtN} shows this dependence for one example run. We observe
 that the time resolution improves according to a $1/\sqrt{N}$ scaling up to
 about 5--6 pixels, and then becomes flat as we include more pixels. The
-initial $1/\sqrt{N}$ scaling is encouraging as it indicates that further
-granularity may improve the time resolution. As the majority of the shower is
+initial $1/\sqrt{N}$ scaling is encouraging as it indicates that the time jitter across
+different pixel channels arise primarily from uncorrelated sources, and that
+further granularity may improve the time resolution provided that the signal is
+sufficiently large compared to noise. As the majority of the shower is
 covered by the pixels closest to the center of the shower, it is not surprising
 that we do not observe any improvement from the inclusion of additional pixels.
-% because they simply do not contain any additional information about the shower.
 
 \begin{figure}[htbp]
   \centering
